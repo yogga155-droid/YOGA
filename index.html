@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Kami</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Video akan memenuhi layar hp/laptop */
+        }
+
+        /* Tombol Play jika browser melarang autoplay */
+        .play-overlay {
+            position: absolute;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <video id="weddingVideo" playsinline>
+        <source src="undangan.mp4" type="video/mp4">
+        Maaf, browser kamu tidak mendukung video HTML5.
+    </video>
+
+    <div id="overlay" class="play-overlay">
+        <h2>Klik untuk Membuka Undangan</h2>
+    </div>
+
+    <script>
+        const video = document.getElementById('weddingVideo');
+        const overlay = document.getElementById('overlay');
+
+        overlay.addEventListener('click', function() {
+            video.play();
+            overlay.style.display = 'none'; // Sembunyikan tombol setelah diklik
+        });
+    </script>
+
+</body>
+</html>
